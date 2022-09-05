@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+nav .logo {
+  padding: 1.5rem;
+}
+
+nav .logo img {
+  height: 1.3rem;
+}
+
+@media screen and (min-width: 700px) {
+  nav .logo img {
+    height: 2rem;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  nav {
+    display: none;
+    position: absolute;
+    top: 1rem;
+    left: 3rem;
+    z-index: 1;
+  }
+}
+
+main {
+  min-height: 100vh;
+}
+
+.card-component {
+  min-height: 100vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-flow: column-reverse;
+          flex-flow: column-reverse;
+}
+
+@media screen and (min-width: 700px) {
+  .card-component {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    max-height: 100vh;
+    margin: auto;
+  }
+}
+
+.card-component .description {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: linear-gradient(135deg, white, #fff5f5);
+}
+
+@media screen and (min-width: 700px) {
+  .card-component .description {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    padding: 3rem 0;
+    background: url(../images/bg-pattern-desktop.svg) no-repeat;
+    background-size: cover;
+  }
+}
+
+.card-component .description .logo {
+  display: none;
+}
+
+@media screen and (min-width: 700px) {
+  .card-component .description .logo {
+    display: block;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+}
+
+.card-component .description .content {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  height: 100%;
+}
+
+.card-component .description .content .inner-content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+}
+
+.card-component .description .heading {
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: 600;
+  line-height: 1.2em;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  color: #413a3a;
+}
+
+.card-component .description .heading span {
+  font-weight: 300;
+  color: #ce9797;
+}
+
+@media screen and (min-width: 700px) {
+  .card-component .description .heading {
+    text-align: left;
+    font-size: 3.5rem;
+  }
+}
+
+.card-component .description .caption {
+  text-align: center;
+  max-width: 20rem;
+  font-size: 0.9rem;
+  line-height: 1.5em;
+  color: #ce9797;
+}
+
+@media screen and (min-width: 700px) {
+  .card-component .description .caption {
+    text-align: left;
+    font-size: 1rem;
+    max-width: 27rem;
+  }
+}
+
+.card-component .description .input-group {
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 100%;
+  max-width: 90%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 700px) {
+  .card-component .description .input-group {
+    max-width: 100%;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+}
+
+.card-component .description .input-group input[type="email"] {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  padding-right: 6rem;
+  font-size: 0.8rem;
+  border: none;
+  outline: 1px solid #e7d1d1;
+  border-radius: 20px;
+  background: transparent;
+}
+
+@media screen and (min-width: 700px) {
+  .card-component .description .input-group input[type="email"] {
+    font-size: 1rem;
+  }
+}
+
+.card-component .description .input-group input[type="email"]::-webkit-input-placeholder {
+  color: #ce9797;
+  opacity: 0.5;
+}
+
+.card-component .description .input-group input[type="email"]:-ms-input-placeholder {
+  color: #ce9797;
+  opacity: 0.5;
+}
+
+.card-component .description .input-group input[type="email"]::-ms-input-placeholder {
+  color: #ce9797;
+  opacity: 0.5;
+}
+
+.card-component .description .input-group input[type="email"]::placeholder {
+  color: #ce9797;
+  opacity: 0.5;
+}
+
+.card-component .description .input-group button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: -1rem;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+  height: 105%;
+  width: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+}
+
+.card-component .description .input-group button:hover {
+  background: #f8bfbf;
+}
+
+.card-component .description .input-group .error {
+  display: none;
+  position: absolute;
+  bottom: -1.5rem;
+  left: 1rem;
+  font-size: 0.8rem;
+  color: #f96262;
+}
+
+.card-component .description .input-group .error-icon {
+  display: none;
+  position: absolute;
+  right: 4rem;
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+  width: 1.2rem;
+}
+
+.card-component .image {
+  -ms-flex-preferred-size: 45%;
+      flex-basis: 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card-component .image .heroMobile {
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (min-width: 700px) {
+  .card-component .image .heroMobile {
+    display: none;
+  }
+}
+
+.card-component .image .heroDesktop {
+  display: none;
+}
+
+@media screen and (min-width: 700px) {
+  .card-component .image .heroDesktop {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+footer {
+  display: none;
+}
+
+.active .error,
+.active .error-icon {
+  display: block !important;
+}
+
+.active input[type="email"] {
+  outline: 1px solid #f96262 !important;
+}
+/*# sourceMappingURL=style.css.map */

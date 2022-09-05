@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+// vars
+// color pallete
+$DesaturatedRed: hsl(0, 36%, 70%);
+$SoftRed: hsl(0, 93%, 68%);
+$DarkGrayishRed: hsl(0, 6%, 24%);
+$white: hsl(0, 0%, 100%);
+$fadePink: hsl(0, 100%, 98%);
+$softPink: hsl(0, 80%, 86%);
+$pink: hsl(0, 74%, 74%);
+nav {
+  .logo {
+    padding: 1.5rem;
+    img {
+      height: 1.3rem;
+      @media screen and(min-width:700px) {
+        height: 2rem;
+      }
+    }
+  }
+  @media screen and(min-width:700px) {
+    display: none;
+    position: absolute;
+    top: 1rem;
+    left: 3rem;
+    z-index: 1;
+  }
+}
+main {
+  min-height: 100vh;
+}
+
+.card-component {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-flow: column-reverse;
+  @media screen and(min-width:700px) {
+    flex-flow: row;
+    max-height: 100vh;
+    margin: auto;
+  }
+  .description {
+    flex: 1;
+    display: flex;
+    background: linear-gradient(135deg, $white, $fadePink);
+    @media screen and(min-width:700px) {
+      flex-basis: 50%;
+      padding: 3rem 0;
+      background: url(../images/bg-pattern-desktop.svg) no-repeat;
+      background-size: cover;      
+    }
+    .logo {
+      display: none;
+      @media screen and(min-width:700px) {
+        display: block;
+        align-self: flex-start;
+      }
+    }
+    .content {
+      margin: auto;
+      display: flex;
+      flex-flow: column;
+      height: 100%;
+      .inner-content {
+        flex: 1;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        gap: 1rem;
+      }
+    }
+    .heading {
+      text-align: center;
+      font-size: 2.3rem;
+      font-weight: 600;
+      line-height: 1.2em;
+      letter-spacing: 10px;
+      text-transform: uppercase;
+      color: $DarkGrayishRed;
+      span {
+        font-weight: 300;
+        color: $DesaturatedRed;
+      }
+      @media screen and(min-width:700px) {
+        text-align: left;
+        font-size: 3.5rem;
+      }
+    }
+    .caption {
+      text-align: center;
+      max-width: 20rem;
+      font-size: 0.9rem;
+      line-height: 1.5em;
+      color: $DesaturatedRed;
+      @media screen and(min-width:700px) {
+        text-align: left;
+        font-size: 1rem;
+        max-width: 27rem;
+      }
+    }
+    .input-group {
+      align-self: center;
+      width: 100%;
+      max-width: 90%;
+      position: relative;
+      display: flex;
+      margin-top: 1rem;
+      @media screen and(min-width:700px) {
+        max-width: 100%;
+        align-self: flex-start;
+      }
+      input[type="email"] {
+        width: 100%;
+        padding: 0.9rem 1rem;
+        // padding-right: 4rem;
+        padding-right: 6rem;
+        font-size: 0.8rem;
+        border: none;
+        outline: 1px solid rgb(231, 209, 209);
+        border-radius: 20px;
+        background: transparent;
+        @media screen and(min-width:700px) {
+          font-size: 1rem;
+        }
+        &::placeholder {
+          color: $DesaturatedRed;
+          opacity: 0.5;
+        }
+      }
+      button {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        right: -1rem;
+        transform: translate(0%, -50%);
+        height: 105%;
+        width: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        border-radius: 40px;
+        background: linear-gradient(135deg, $softPink, $pink);
+        &:hover {
+          background: $softPink;
+        }
+      }
+      .error {
+        display: none;
+        position: absolute;
+        bottom: -1.5rem;
+        left: 1rem;
+        font-size: 0.8rem;
+        color: $SoftRed;
+      }
+      .error-icon {
+        display: none;
+        position: absolute;
+        right: 4rem;
+        top: 50%;
+        transform: translate(0%, -50%);
+        width: 1.2rem;
+      }
+    }
+  }
+  .image {
+    flex-basis: 45%;
+    display: flex;
+    .heroMobile {
+      height: 100%;
+      width: 100%;
+      @media screen and(min-width:700px) {
+        display: none;
+      }
+    }
+    .heroDesktop {
+      display: none;
+      @media screen and(min-width:700px) {
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+
+// footer
+footer {
+  display: none;
+}
+
+// utilities
+
+.active {
+  .error,
+  .error-icon {
+    display: block !important;
+  }
+  input[type="email"] {
+    outline: 1px solid $SoftRed !important;
+  }
+}
